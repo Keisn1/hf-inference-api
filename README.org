@@ -1,0 +1,42 @@
+* Exploring HF-inference-api
+
+The repo aims at getting familiar with the inference API as well as the
+different tasks and modalities provided
+
+- [X] Text classification
+- [X] Text generation
+- [X] Summarization
+- [X] Image classification
+- [ ] Image segmentation
+- [ ] Object detection
+- [ ] Audio classification
+- [ ] Automatic speech recognition
+- [ ] Visual question answering
+- [ ] Document question answering
+- [ ] Image captioning
+
+It also aims at getting used to Best Software Development practices / Clean Code
+/ 12 factor methodology and Security practices.
+
+** General
+*** API Token and Setup
+- Setup API Token
+  - trying to follow 12 factor app and best security practices
+  - should be environment variables
+  - I guess there is a debate if .env files oblige the 12Factor methodology
+  - 2 ways
+    - python-decouple
+    - python-dotenv
+  - python-dotenv seems more modern therefore using this
+
+- requirements
+  - pip freeze > requirements.txt to have exact dependencies
+*** API Options
+[[https://huggingface.co/docs/api-inference/detailed_parameters][detailed parameters]]
+*** CPU acceleration
+- check x-compute-type header of request shall be 'cpu+optimized'
+*** Loading and Latency
+- if requested model not loaded, 503
+- inference endpoint if necessary
+
+** Text classification
